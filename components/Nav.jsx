@@ -15,7 +15,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3">
+    <nav className="flex-between w-full pt-3  max-w-7xl mx-auto sm:px-16 px-6 relative z-10">
       <Link href='/' className="flex gap-2 flex-center">
         <p className="text-[18px]">Chat Me</p>
       </Link>

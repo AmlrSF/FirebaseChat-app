@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <section className="w-full flex-center h-full justify-between flex-col ">
         <h1 className="head_text text-center">
-            Chat & Have
+            Chat & Have 
             <br className="max-md:hidden"/>
-            <span className="blue_gradient text-center">With your Friends</span>
+            <span className="blue_gradient text-center"> Fun with your friends</span>
         </h1>
         <p className="desc text-center">
             Lorem, ipsum dolor sit amet consectetur adipisicing 

@@ -1,15 +1,34 @@
-'use client'
 
 import { Fragment } from "react";
 import Image from 'next/image'
 import {Dialog,Transition} from '@headlessui/react'
+import {GoogleOutlined, FacebookOutlined} from '@ant-design/icons';
+import "firebase/app";
 
-
+import { UserAuth } from "@/context/authContext";
 
 
 const ChatNow = ({isopen,closeChat}) => {
-  return (
-    <>
+    const {googleSignIn, facebookSignIn} = UserAuth();
+
+    const handleGoogle = async () =>{
+        try {
+            await googleSignIn()
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
+    const handleFacebook = async () =>{
+        try {
+            await facebookSignIn()
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return (
+        <>
         <Transition appear show={isopen} as={Fragment}>
             <Dialog as='div' className='relative z-10' onClose={closeChat}>
                 <Transition.Child
@@ -47,7 +66,33 @@ const ChatNow = ({isopen,closeChat}) => {
                                         height={20}
                                         className='object-contain'
                                     />
+                                    
                                 </button>
+
+                                <h3 className="head_text text-center">Login With.</h3>
+                                    <div className="flex flex-col items-center gap-5">
+                                        <div
+                                            className='flex items-center gap-5 
+                                            text-center font-bold justify-center py-4 text-[18px]
+                                            cursor-pointer rounded-full bg-cyan-600 
+                                            w-[150px] text-white'
+
+                                            onClick={handleGoogle}
+                                        >
+                                            <GoogleOutlined /> Google
+                                        </div>
+                                        <div
+                                            className='flex items-center gap-5 
+                                            text-center font-bold justify-center py-4 text-[18px] 
+                                            cursor-pointer rounded-full bg-cyan-600 w-[150px]
+                                            text-white'
+                                            
+                                            onClick={handleFacebook}
+                                        >
+                                            <FacebookOutlined /> Facebook
+                                        </div>
+                                    </div>
+
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>

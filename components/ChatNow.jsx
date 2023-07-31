@@ -16,6 +16,8 @@ const ChatNow = ({isopen,closeChat}) => {
             await googleSignIn()
         } catch (error) {
             console.log(error);
+        }finally{
+            closeChat(false)
         }
     }
     
@@ -24,6 +26,8 @@ const ChatNow = ({isopen,closeChat}) => {
             await facebookSignIn()
         } catch (error) {
             console.log(error);
+        }finally{
+            closeChat(false)
         }
     }
 

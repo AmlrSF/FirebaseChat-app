@@ -4,14 +4,16 @@ import Link from "next/link";
 import { UserAuth } from "@/context/authContext";
 
 const Nav = () => {
-  const {user, logout} = UserAuth();
+  const {user, Logout} = UserAuth();
+
   const handleLogout = async() =>{
     try {
-      await logout();
+      await Logout();
     } catch (error) {
       console.log(error);
     }
   }
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href='/' className="flex gap-2 flex-center">

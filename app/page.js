@@ -11,7 +11,7 @@ const Home = () => {
   const router = useRouter();
 
   return (
-    <section className="w-full flex-center h-full justify-between flex-col ">
+    <section className="w-full relative flex-center h-full justify-between flex-col ">
         <h1 className="head_text text-center">
             Chat & Have 
             <br className="max-md:hidden"/>

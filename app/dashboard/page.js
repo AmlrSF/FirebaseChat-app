@@ -59,8 +59,8 @@ const dashboard = () => {
             height="calc(100vh - 50px)"
             className='w-full'
             projectId='2b833ba6-6c62-4178-a742-c7e0f9d80ef4'
-            userName={user.email}
-            userSecret={user.uid}
+            userName=''
+            userSecret=''
         />
     )
 }
